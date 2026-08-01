@@ -125,7 +125,7 @@ if (user_input):
       with st.spinner("Running Agent"):
         try:
           url = generate_image(user_input)
-          import request as r
+          import requests as r
           img_data = r.get(url)
           st.image(url)
         except Exception as err:
