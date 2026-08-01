@@ -102,7 +102,7 @@ if all(ALL_API):
       tools = [search_latest_info]
       #Generate image
   )
-  leader_agent
+  #leader_agent
 else:
   st.info("Give API-Keys first to load Agent")
 
@@ -143,6 +143,17 @@ if (user_input):
           st.error(f"Error Code: {err}")
 
   with tab3:
+    # Leader_agent creation
+    if all(ALL_API):
+  
+      leader_agent = create_agent(
+          model = model,
+          tools = [search_latest_info]
+          #Generate image
+      )
+      #leader_agent
+    else:
+      st.info("Give API-Keys first to load Agent")
     if st.button("Click to Generate PPT",key = "PPT-Button"):
       with st.spinner("Running Agent"):
         try:
