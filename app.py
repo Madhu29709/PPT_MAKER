@@ -126,7 +126,7 @@ if (user_input):
         try:
           url = generate_image(user_input)
           import request as r
-          img-data = r.get(url)
+          img_data = r.get(url)
           st.image(url)
         except Exception as error:
           st.error("Error Code:",err)
