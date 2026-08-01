@@ -123,7 +123,7 @@ if (user_input):
           img_data = r.get(url)
           st.image(url)
         except Exception as err:
-          st.error("Error Code: ", err)
+          st.error(f"Error Code: {err}")
 
   with tab2:
     if st.button("Fetch Latest News",key = "News-Button"):
@@ -140,7 +140,7 @@ if (user_input):
           st.html(code,width="stretch",unsafe_allow_javascript=True)
 
         except Exception as err:
-          st.error("Error Code: ", err)
+          st.error(f"Error Code: {err}")
 
   with tab3:
     if st.button("Click to Generate PPT",key = "PPT-Button"):
@@ -153,6 +153,6 @@ if (user_input):
                                data = code,
                                file_name = 'ppt.html',
                                mime = 'text/html'):
-                               st.success("PPT Downloaded Successfully!!")
+                  st.success("PPT Downloaded Successfully!!")
         except Exception as err:
-          st.error("Error Code: ", err)
+          st.error(f"Error Code: {err}")
