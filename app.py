@@ -10,13 +10,15 @@ from tavily import TavilyClient
 import numpy as np
 import streamlit as st
 
+st.set_page_config(layout ="wide")
+
 # ======== step 2 LOAD ENV AND API - KEYS=======
 st.title("your Agent PPT Generator")
 st.header("""user can generate ,PPT,Images, and fetch Latest news""")
 
 st.sidebar.title("Give API KEYS")
-GOOGLE_API_KEY = st.sidebar.text_input("GOOGLE_API_KEY"= type ="password")
-TAVILY_API_KEY = st.sidebar.text_input("TAVILY_API_KEY"= type ="password")
+GOOGLE_API_KEY = st.sidebar.text_input("GOOGLE_API_KEY",type ="password")
+TAVILY_API_KEY = st.sidebar.text_input("TAVILY_API_KEY",type ="password")
 
 ALL_API =[GOOGLE_API_KEY,TAVILY_API_KEY]
 
@@ -102,7 +104,7 @@ if all(APP_API):
     tools =[search_latest_info,
             #generate_image
             ])
- leader_agent
+ # leader_agent
 
 else:
   st.info("Give  API - keys frist to  load agent")
@@ -117,7 +119,7 @@ tab1, tab2, tab3, = st.tabs(["Generate Image",
 
 user_input = st.text_area("Write Prompt & click Enter")
 
-if (user_input) & (leader_agent):
+if (user_input):
   with tab1:
     if st.button("Click to Generate Image",key ="Image-Button"):
       with st.spinner("Running Agent"):
