@@ -35,9 +35,9 @@ elif all(ALL_API):
   options = ["gemini-3.5-flash-lite","gemini-3.5-flash",
              "gemini-2.5-flash-lite","gemini-2.5-flash",]
 
-selected_model =st.selectbox("Select=model",options=options)
+  selected_model =st.selectbox("Select=model",options=options)
 
-model = ChatGoogleGenerativeAI(
+  model = ChatGoogleGenerativeAI(
     model = selected_model,
     google_api_key = GOOGLE_API_KEY)
 
