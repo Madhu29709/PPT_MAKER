@@ -128,7 +128,7 @@ if (user_input):
           import request as r
           img_data = r.get(url)
           st.image(url)
-        except Exception as error:
+        except Exception as err:
           st.error("Error Code:",err)
 
   with  tab2:
