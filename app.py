@@ -102,7 +102,7 @@ if all(ALL_API):
       tools = [search_latest_info]
       #Generate image
   )
-  #leader_agent
+  leader_agent
 else:
   st.info("Give API-Keys first to load Agent")
 
